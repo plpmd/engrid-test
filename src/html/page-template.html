@@ -24,11 +24,10 @@
     <!-- End Google Optimize with page hiding snippet -->
 
 	<!-- Start Google Tag Manager Data Layer Initialization Script -->
-    <!--
 	<script>
-	 dataLayer = [];
+	 window.dataLayer = window.dataLayer || [];
 	</script>
-    -->
+
 	<!-- End Google Tag Manager Data Layer Initialization Script -->
     
     <!-- Social Sharing Meta Tags Used by Facebook-->
@@ -57,8 +56,13 @@
         }
     </style>
 
+    <link rel="preconnect" href="//www.googletagmanager.com">
+    <link rel="preconnect" href="//www.google-analytics.com">
+    <link rel="preconnect" href="//aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com">
+   
     <!-- Placed here so that downloading begins before Engaging Network's CSS and JS files -->
-	<link rel="preload" href="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1874/engrid-new.min.js?v=1774465804000" as="style">
+	<link rel="preload" href="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1874/engrid.min.js?v=1774524270000" as="script">
+    <link rel="preload" href="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1874/engrid.min.css?v=1774524268000" as="style">
     <link rel="preload" href="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1874/4site-logo-white-background.png?v=1765902906000" as="image">
 
 </head>
@@ -73,26 +77,24 @@
     </script> 
 
     <!-- Load ENGrid's CSS here so that it always comes after Engaging Networks CSS which gets injected into <head> -->
-    <link href="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1874/engrid-new.min.js?v=1774465804000" rel="stylesheet" type="text/css">
+    <link href="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1874/engrid.min.css?v=1774524268000" rel="stylesheet" type="text/css">
 
     <!-- Start preloading the Header Font, Body Font, and Label Fonts while the CSS files are still being downloaded -->
     <link rel="preload" href="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1874/montserrat-regular.woff2?v=1774466723000" as="font" type="font/woff2" crossorigin> 
 
 	<div id="engrid">
 	<!-- Start EN Page Builder -->
-
-
-
-
-
-
-
-    <!-- End EN Page Builder -->
+     <!-- End EN Page Builder -->
     </div>
 
-    <!-- Placed here so it does not render block the page.-->
-    <script src="https://TBD/engrid.min.js" data-repo-owner="4site-interactive-studios" data-repo-name="engrid-TBD"></script>
+    <script>
+        const engrid = document.getElementsByTagName('BODY')[0]
+        engrid.setAttribute('data-engrid-layout', 'centercenter1col')
+    </script>
 
+    <!-- Placed here so it does not render block the page.-->
+    <script async src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1874/engrid.min.js?v=1774524270000"></script>
+    
     <!-- Start Render Critical Javascript (comes after the DOM has finished loading) -->
     <script>
         window.addEventListener('DOMContentLoaded', (event) => {
@@ -113,13 +115,14 @@
     <!-- End Render Critical Javascript (comes after the DOM has finished loading) -->	 
 
     <!-- Google Tag Manager --> 
-    <!-- <script>
+    <!-- Start Google Tag Manager --> 
+    <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-TBD');
-    </script> -->
+        })(window,document,'script','dataLayer','GTM-PG5HNP');
+    </script>
     <!-- End Google Tag Manager -->
 
     <!-- Additional Social Sharing Meta Tags Used by Facebook-->
