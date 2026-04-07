@@ -1,7 +1,9 @@
 // The most broadly used CSS Custom Properties for quick theming.
 // Uncomment to use and reference engrid-scrips SASS files for more CSS Custom Properties.
 // All CSS Custom Properties should be scoped to the theme using CSS Data Attributes.
-[data-engrid-theme="organizational-name"] {
+[data-engrid-theme="engrid-4site"] {
+  --color-orange: #FF800B;
+  --color-blue: #276DF0;
   // TYPOGRAPHY DEFAULT
   // --default_font-family: var(--native-fonts__sans-serif);
   // --default_color: initial;
@@ -81,10 +83,19 @@
   // --recurring-frequency__button_count: 4;
   // --donation-amount__button_count: 4;
   // --give-by-select__button_count: 4;
+
+  --button_background-color: var(--color-blue);
+  --donation-amount__button_background-color_checked: var(--color-orange);
+  --donation-amount__button_border-color_checked: var(--color-orange);
+  --donation-amount__button_background-color_hover: var(--color-orange);
+  --donation-amount__button_border-color_hover: var(--color-orange);
+  --recurring-frequency__button_background-color: var(--color-blue);
+  --recurring-frequency__button_background-color_checked: var(--color-orange);
+  --recurring-frequency__button_background-color_hover: var(--color-orange);
 }
 
 /* Add your custom theme styles here */
-[data-engrid-theme="organizational-name"] {
+[data-engrid-theme="engrid-4site"] {
   @mixin until-mobile-l {
     // STYLES
   }
@@ -108,16 +119,16 @@
     }
   }
 
-  // Example of Shared Layout Stylings
-  &[data-engrid-layout="centerleft1col"] {
-    @media screen and (max-width: $centerleft1col_content-column_min-width) {
-      @include simplified-header;
-    }
-  }
-
-  &[data-engrid-layout="centerright1col"] {
-    @media screen and (max-width: $centerright1col_content-column_min-width) {
-      @include simplified-header;
-    }
+  &#en__pagebuilder .page-alert,
+  &#en__pagebuilder .content-header,
+  &#en__pagebuilder .body-header,
+  &#en__pagebuilder .body-banner,
+  &#en__pagebuilder .body-bannerOverlay,
+  &#en__pagebuilder .body-bottom,
+  &#en__pagebuilder .body-footerOutside,
+  &#en__pagebuilder .content-footerSpacer,
+  &#en__pagebuilder .content-preFooter,
+  &#en__pagebuilder .page-backgroundImageOverlay {
+    display: none !important;
   }
 }

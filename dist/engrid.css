@@ -19,7 +19,7 @@
  *
  *  ENGRID PAGE TEMPLATE ASSETS
  *
- *  Date: Thursday, March 26, 2026 @ 07:14:30 ET
+ *  Date: Tuesday, April 7, 2026 @ 17:29:04 ET
  *  By: pedroluan
  *  ENGrid styles: v0.24.0
  *  ENGrid scripts: v0.24.5
@@ -7775,6 +7775,21 @@ body[data-engrid-debug]:before{
 
 #en__pagebuilder video[data-src]{
   background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgMzAwIj48cGF0aCBmaWxsPSIjY2NjIiBkPSJNMCAwaDQwMHYzMDBIMHoiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSIyNiIgZmlsbD0iIzMzMyI+TGF6eSBMb2FkZWQgVmlkZW88L3RleHQ+PC9zdmc+);
+}
+[data-engrid-theme=engrid-4site]{
+  --color-orange:#ff800b;
+  --color-blue:#276df0;
+  --button_background-color:var(--color-blue);
+  --donation-amount__button_background-color_checked:var(--color-orange);
+  --donation-amount__button_border-color_checked:var(--color-orange);
+  --donation-amount__button_background-color_hover:var(--color-orange);
+  --donation-amount__button_border-color_hover:var(--color-orange);
+  --recurring-frequency__button_background-color:var(--color-blue);
+  --recurring-frequency__button_background-color_checked:var(--color-orange);
+  --recurring-frequency__button_background-color_hover:var(--color-orange);
+}
+[data-engrid-theme=engrid-4site]#en__pagebuilder .body-banner,[data-engrid-theme=engrid-4site]#en__pagebuilder .body-bannerOverlay,[data-engrid-theme=engrid-4site]#en__pagebuilder .body-bottom,[data-engrid-theme=engrid-4site]#en__pagebuilder .body-footerOutside,[data-engrid-theme=engrid-4site]#en__pagebuilder .body-header,[data-engrid-theme=engrid-4site]#en__pagebuilder .content-footerSpacer,[data-engrid-theme=engrid-4site]#en__pagebuilder .content-header,[data-engrid-theme=engrid-4site]#en__pagebuilder .content-preFooter,[data-engrid-theme=engrid-4site]#en__pagebuilder .page-alert,[data-engrid-theme=engrid-4site]#en__pagebuilder .page-backgroundImageOverlay{
+  display:none !important;
 }
 body{
   opacity:1;
