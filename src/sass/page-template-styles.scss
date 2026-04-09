@@ -3,32 +3,36 @@
 // All CSS Custom Properties should be scoped to the theme using CSS Data Attributes.
 [data-engrid-theme="engrid-4site"] {
   --color-orange: #FF800B;
+  --color-dark-orange: #fe7f0c;
   --color-blue: #276DF0;
+  --color-dark-grey: #333444;
   // TYPOGRAPHY DEFAULT
-  // --default_font-family: var(--native-fonts__sans-serif);
-  // --default_color: initial;
-  // --default_font-size: var(--root_font-size);
-  // --default_font-weight: initial;
-  // --default_line-height: initial;
+  --default_font-family: "p22-mackinac-pro", serif;
+  --default_color: var(--color-dark-grey);
+  --root_font-size: 16px;
+  --default_font-size: var(--root_font-size);
+  //--default_font-weight: initial;
+  --default_line-height: 1.4;
 
   // TYPOGRAPHY H1
-  // --h1_font-family: var(--default_font-family);
-  // --h1_color: initial;
-  // --h1_font-size: calc(var(--root_font-size) * var(--scale-up_160pct));
-  // --h1_font-weight: initial;
-  // --h1_line-height: initial;
+  --h1_font-family: var(--default_font-family);
+  --h1_color: initial;
+  --h1_font-size: 3.125rem;
+  --h1_font-weight: 400;
+  --h1_line-height: 1.1;
 
   // TYPOGRAPHY P
-  // --p_font-family: var(--default_font-family);
-  // --p_color: initial;
-  // --p_font-size: var(--root_font-size);
-  // --p_font-weight: initial;
-  // --p_line-height: initial;
+   --p_font-family: var(--default_font-family);
+   //--p_color: initial;
+   //--p_font-size: var(--root_font-size);
+   --p_font-weight: 300;
+   //--p_line-height: initial;
 
   // TYPOGRAPHY A
-  // --a_font-family: var(--default_font-family);
-  // --a_color: initial;
-  // --a_text-decoration: underline;
+  --a_font-family: var(--default_font-family);
+  --a_color: var(--color-orange);
+  --a_text-decoration: none;
+  --a_text-decoration_hover: underline;
 
   // TYPOGRAPHY A:FOCUS
   // TYPOGRAPHY A:HOVER
@@ -43,7 +47,7 @@
   // --input_line-height: initial;
   // --input_background-color: #fafafa;
   // --input_border-width: 1px;
-  // --input_border-color: #dfdfe1;
+  --input_border-color: var(--color_dark-gray);
   // --input_border-radius: 6px;
   // --input_placeholder-color: var(--color_light-gray);
   // --input_box-shadow: inset 0 2px 2px -1px rgba(74, 74, 104, 0.1);
@@ -80,18 +84,27 @@
   // DONATION PAGE
   // --give-monthly-donation-amount-appended-label: "/mo";
   // --give-annual-donation-amount-appended-label: "/yr";
-  // --recurring-frequency__button_count: 4;
-  // --donation-amount__button_count: 4;
-  // --give-by-select__button_count: 4;
+  --recurring-frequency__button_count: 2;
+  --donation-amount__button_count: 3;
+  --give-by-select__button_count: 3;
 
   --button_background-color: var(--color-blue);
+  --give-by-select__button_background-color_checked: var(--color-orange);
+  --give-by-select__button_background-color_hover: var(--color-dark-orange);
+  --give-by-select__button_border-color_hover: var(--color-dark-orange);
+    --give-by-select__button_border-color_checked: var(--color-orange);
   --donation-amount__button_background-color_checked: var(--color-orange);
   --donation-amount__button_border-color_checked: var(--color-orange);
-  --donation-amount__button_background-color_hover: var(--color-orange);
-  --donation-amount__button_border-color_hover: var(--color-orange);
+  --donation-amount__button_background-color_hover: var(--color-dark-orange);
+  --donation-amount__button_border-color_hover: var(--color-dark-orange);
   --recurring-frequency__button_background-color: var(--color-blue);
   --recurring-frequency__button_background-color_checked: var(--color-orange);
-  --recurring-frequency__button_background-color_hover: var(--color-orange);
+  --recurring-frequency__button_background-color_hover: var(--color-dark-orange);
+  --recurring-frequency__button_border-color_hover: var(--color-dark-orange);
+  --recurring-frequency__button_border-color_checked: var(--color-orange);
+  --submit__button_background-color: var(--color-blue);
+  --submit__button_background-color_hover: var(--color-orange);
+  --submit__button_border-color_hover: var(--color-orange);
 }
 
 /* Add your custom theme styles here */
@@ -131,4 +144,86 @@
   &#en__pagebuilder .page-backgroundImageOverlay {
     display: none !important;
   }
+
+  .radio-to-buttons_recurrfreq .en__field--recurrfreq.en__field--radio .en__field__item input[type="radio"]+label {
+    white-space: nowrap;
+  }
+
+  .radio-to-buttons_donationAmt .en__field--donationAmt .en__field__item.en__field__item--other {
+    position: relative;
+
+    input:focus {
+      outline: none;
+    }
+
+    &:before {
+      content: attr(data-currency-symbol);
+      position: absolute;
+      left: 20px;
+      top: 46%;
+      line-height: 0;
+      font-size: 1em;
+    }
+
+    input {
+      padding-left: 30px;
+      line-height: var(--donation-amount__button_line-height);
+    }
+  }
+
+    .give-by-select {
+    @media screen and (max-width: 600px) {
+      --give-by-select__button_count: 1;
+    }
+  }
+  &[data-engrid-transaction-recurring="n"] {
+    .give-by-select.en__field__item:not(.hide):not(.recurring-frequency-n-hide):nth-child(even).ach {
+      flex-basis: 100%;
+    }
+  }
+  &[data-engrid-transaction-recurring="y"] {
+    .give-by-select.en__field__item:not(.hide):not(.recurring-frequency-y-hide):nth-child(even).ach {
+      flex-basis: 100%;
+    }
+  }
+  &[data-engrid-payment-type-option-apple-pay="false"][data-engrid-payment-type-option-google-pay="false"][data-engrid-transaction-recurring="n"] {
+    .give-by-select.en__field__item:not(.hide):nth-child(even).ach {
+      flex-basis: 50%;
+    }
+  }
+
+  .give-by-select .en__field__element--radio {
+    align-items: stretch;
+  }
+
+  .give-by-select input[type="radio"] + label {
+    padding: 12px 22px;
+    height: 65px;
+    max-height: 65px;
+  }
+
+  .give-by-select .en__field__label img {
+    width: auto;
+    height: auto;
+    max-height: 70%;
+    &.paypal-venmo {
+      max-height: 50%;
+    }
+  }
+  .give-by-select .en__field__item:has(:checked) img:not(.credit-card-logos) {
+    filter: brightness(0) invert(1);
+  }
+
+  .give-by-select .venmo label > img:last-of-type {
+    height: 20px;
+    margin-top: 5px;
+  }
+}
+
+[data-engrid-transaction-recurring-frequency]
+  .radio-to-buttons_donationAmt
+  .en__field--donationAmt
+  div:not(.en__field__item--other)
+  .en__field__label--item:after {
+  margin-left: 2.859375px !important;
 }
