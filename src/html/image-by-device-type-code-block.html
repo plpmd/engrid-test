@@ -1,0 +1,33 @@
+<img id='desktop-background' src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1874/4SiteBackground.png?v=1775651015000"
+        alt="4Site Team Background" width="3236" height="2160" style="display: none;">
+    <img id='mobile-image' src="https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/1874/4site-troupe-mobile.png?v=1776102117000"
+        alt="4Site Team Background" width="3236" height="2160" style="display: none;">
+    
+    <!-- Script to show image according to device type -->
+    <script>
+        (function() {
+            function showImageByDeviceType() {
+                const desktopImg = document.getElementById('desktop-background');
+                const mobileImg = document.getElementById('mobile-image');
+                const isMobile = window.innerWidth <= 768;
+                
+                if (isMobile) {
+                    mobileImg.style.setProperty('display', 'block', 'important');
+                    desktopImg.style.setProperty('display', 'none', 'important');
+                } else {
+                    desktopImg.style.setProperty('display', 'block', 'important');
+                    mobileImg.style.setProperty('display', 'none', 'important');
+                }
+            }
+            
+            // Show appropriate image on load
+            showImageByDeviceType();
+            
+            // Update on window resize
+            let resizeTimeout;
+            window.addEventListener('resize', function() {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(showImageByDeviceType, 100);
+            });
+        })();
+    </script>
